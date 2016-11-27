@@ -1,0 +1,56 @@
+$fontColor: #484848;
+$bgColor: #323232;
+$iconColor: #9B9B9B;
+$lightGreen: #7ED321;
+
+#left-menu{
+  width: 140px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  background-color: $bgColor;
+  ul{
+    li{
+      padding: 30px 0;
+      border-bottom: 1px solid $iconColor;
+      i{
+        color: $iconColor;
+      }
+      &:hover{
+        background-color: $lightGreen;
+        i{
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+#right-menu{
+  width: 270px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: $bgColor;
+  padding-top: 100px;
+  padding-left: 10px;
+  input{
+    border:0;
+    padding:10px;
+    font-size:1.3em;
+    font-family:Arial, sans-serif;
+    color:#aaa;
+    border:solid 1px #ccc;
+    width:90%;
+    box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  }
+  ul{
+    li{
+      padding: 15px 0;
+      color: white;
+    }
+  }
+}

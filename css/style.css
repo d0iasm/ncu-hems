@@ -1,0 +1,39 @@
+#left-menu {
+  width: 140px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  background-color: #323232; }
+  #left-menu ul li {
+    padding: 30px 0;
+    border-bottom: 1px solid #9B9B9B; }
+    #left-menu ul li i {
+      color: #9B9B9B; }
+    #left-menu ul li:hover {
+      background-color: #7ED321; }
+      #left-menu ul li:hover i {
+        color: white; }
+
+#right-menu {
+  width: 270px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #323232;
+  padding-top: 100px;
+  padding-left: 10px; }
+  #right-menu input {
+    border: 0;
+    padding: 10px;
+    font-size: 1.3em;
+    font-family: Arial, sans-serif;
+    color: #aaa;
+    border: solid 1px #ccc;
+    width: 90%;
+    box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5); }
+  #right-menu ul li {
+    padding: 15px 0;
+    color: white; }
