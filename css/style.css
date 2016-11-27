@@ -42,3 +42,11 @@ main {
   margin-left: 10vw;
   width: 75vw;
   height: 100%; }
+
+.btn {
+  text-decoration: none;
+  border: 3px solid #DDD;
+  font-weight: bold;
+  text-align: center;
+  font-size: 13px;
+  display: block; }
