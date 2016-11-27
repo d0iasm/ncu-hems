@@ -5,9 +5,17 @@
   <% include common/_header %>
   <% include common/_left-menu %>
   <main>
-
+    <div id="map-container"></div>
   </main>
   <% include common/_right-menu %>
-  <!-- <script src="js/script.js"></script> -->
+  <script type="text/javascript">
+    var data = {
+        "NY" : { "value": "$4" },
+        "AL" : { "value": "$1" }
+    };
+    var map = new Squaire(data, {
+        colors: d3.scale.quantize().domain([1,5]).range(['#c9e2f5','#0098db'])
+    });
+</script>
 </body>
 </html>

@@ -7,7 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/ress.min.css">
   <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/squaire.css">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <script src="../js/d3.min.js"></script>
+  <script src="../js/squaire.js"></script>
 </head>
 
 <body>
@@ -22,7 +26,7 @@
 </nav>
 
   <main>
-
+    <div id="map-container"></div>
   </main>
   <nav id="right-menu">
   <input type="search">
@@ -33,6 +37,14 @@
   </ul>
 </nav>
 
-  <!-- <script src="js/script.js"></script> -->
+  <script type="text/javascript">
+    var data = {
+        "NY" : { "value": "$4" },
+        "AL" : { "value": "$1" }
+    };
+    var map = new Squaire(data, {
+        colors: d3.scale.quantize().domain([1,5]).range(['#c9e2f5','#0098db'])
+    });
+</script>
 </body>
 </html>
