@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  
+  <!--  -->
   <nav id="left-menu">
   <ul>
     <li><a href="./index.html"><i class="fa fa-4x fa-map-marker" aria-hidden="true"></i></a></li>
@@ -26,7 +26,18 @@
 </nav>
 
   <main>
-    <div id="map-container"></div>
+    <section>
+      <h1>1st</h1>
+      <div id="first-floor"></div>
+    </section>
+    <section>
+      <h1>2st</h1>
+      <div id="second-floor"></div>
+    </section>
+    <section>
+      <h1>3st</h1>
+      <div id="third-floor"></div>
+    </section>
   </main>
   <nav id="right-menu">
   <input type="search">
@@ -38,13 +49,50 @@
 </nav>
 
   <script type="text/javascript">
-    var data = {
-        "NY" : { "value": "$4" },
-        "AL" : { "value": "$1" }
-    };
-    var map = new Squaire(data, {
-        colors: d3.scale.quantize().domain([1,5]).range(['#c9e2f5','#0098db'])
-    });
-</script>
+    datasets = [50,110,170,230,290];
+    var svg = d3.select("#first-floor").append("svg").attr({width:700,height:200});
+
+    svg.selectAll("rect")
+      .data(datasets)
+      .enter()
+      .append("rect")
+      .attr({
+        x:function(d){return d},
+        y:function(d){return 100},
+        width:50,
+        height:50,
+      	fill:"#9B9B9B"
+      });
+
+      datasets = [50,110,170,230,290];
+      var svg = d3.select("#second-floor").append("svg").attr({width:700,height:200});
+
+      svg.selectAll("rect")
+        .data(datasets)
+        .enter()
+        .append("rect")
+        .attr({
+          x:function(d){return d},
+          y:function(d){return 100},
+          width:50,
+          height:50,
+        	fill:"#9B9B9B"
+        });
+
+        datasets = [50,110,170,230,290];
+        var svg = d3.select("#third-floor").append("svg").attr({width:700,height:200});
+
+        svg.selectAll("rect")
+          .data(datasets)
+          .enter()
+          .append("rect")
+          .attr({
+            x:function(d){return d},
+            y:function(d){return 100},
+            width:50,
+            height:50,
+          	fill:"#9B9B9B"
+          });
+    </script>
 </body>
 </html>
