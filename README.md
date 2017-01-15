@@ -1,13 +1,11 @@
 # 名古屋市立大学芸術工学部実習製作
-  
+
 ## Tools
 * Vagrant 1.9.1
 * VirtualBox 4.3.28
-
 * CentOS 7.0_64bit
 * Apache 2.4.6 (HTTPサーバ)
 * Vsftpd 3.0.2 (FTPサーバ)
-
 
 ## Getting Started
 
@@ -19,17 +17,17 @@
 ## Accsess  
 `vagrant up`をしてから  
 http://localhost:8080/  
-http://192.168.0.5/  
+http://(`$ ip a`で調べたIPアドレス)/  
 
 ## FTP送信方法
-Cyberduckから接続  
+### Cyberduckから接続  
 プロトコル:SFTP  
 サーバ:`$ ip a`でIPアドレスを調べる（毎回変わる）  
 ユーザ名:vagrant  
 パスワード:vagrant  
 パス:/var/www/html  
-
-コマンド接続  
+  
+### コマンド接続  
 `$ ftp`  
 `$ open`  
 `(to) ($ ip aで調べたIPアドレス)`  
