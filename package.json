@@ -1,0 +1,33 @@
+{
+  "name": "ncu-hems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d0iasm/ncu-hems.git"
+  },
+  "author": "https://github.com/d0iasm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d0iasm/ncu-hems/issues"
+  },
+  "homepage": "https://github.com/d0iasm/ncu-hems#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-ejs": "^3.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-webpack": "^1.5.0"
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+}
