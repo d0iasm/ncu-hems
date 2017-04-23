@@ -6,6 +6,7 @@ var uglify = require("gulp-uglify");
 var browser = require("browser-sync");
 var plumber = require("gulp-plumber");
 var rename = require("gulp-rename");
+var webpack = require('gulp-webpack');
 
 gulp.task("server", function() {
     browser({
