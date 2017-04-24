@@ -44,7 +44,11 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-	console.log('ハロー from main.js');
+	(function() {
+	    window.addEventListener('load', function() {
+	        alert('loaded!!!');
+	   });
+	})();
 
 
 /***/ })

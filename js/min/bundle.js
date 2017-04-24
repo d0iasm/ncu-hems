@@ -1,0 +1,1 @@
+!function(n){function o(e){if(t[e])return t[e].exports;var r=t[e]={exports:{},id:e,loaded:!1};return n[e].call(r.exports,r,r.exports,o),r.loaded=!0,r.exports}var t={};o.m=n,o.c=t,o.p="",o(0)}([function(n,o){!function(){window.addEventListener("load",function(){alert("loaded!!!")})}()}]);
