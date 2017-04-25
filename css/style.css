@@ -5,3 +5,15 @@ h1 {
     color: blue;
     -webkit-transform: translate(10px, 0);
             transform: translate(10px, 0); }
+
+.left-menu {
+  width: 20vw;
+  height: 100%; }
+  .left-menu .user {
+    width: 100%;
+    height: 15vh;
+    background-color: #009624; }
+  .left-menu .menu-btn {
+    width: 100%;
+    height: 15vh;
+    background-color: #00c853; }
