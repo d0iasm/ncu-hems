@@ -17,7 +17,7 @@ gulp.task("server", function() {
 });
 
 gulp.task("sass", function() {
-    gulp.src("sass/**/*scss")
+    gulp.src(["sass/**/*scss", "!sass/**/_*.scss"])
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
@@ -34,7 +34,7 @@ gulp.task("js", function() {
 });
 
 gulp.task("ejs", function() {
-    gulp.src(["ejs/**/*.ejs",'!' + "ejs/**/_*.ejs"])
+    gulp.src(["ejs/**/*.ejs","!ejs/**/_*.ejs"])
         .pipe(plumber())
         .pipe(ejs())
         .pipe(rename({extname: '.html'}))
@@ -52,7 +52,7 @@ gulp.task("webpack", function() {
 
 gulp.task("default", ['server'], function() {
     gulp.watch("sass/**/*.scss",["sass"]);
-    gulp.watch(["js/**/*.js","!js/bundle.js","!js/min/**/*.js"],["webpack"]);
-    gulp.watch(["js/**/*.js","!js/min/**/*.js"],["js"]);
-    gulp.watch(["ejs/**/*.ejs",'!' + "ejs/**/_*.ejs"],["ejs"]);
+    gulp.watch("js/**/*.js",["webpack"]);
+    gulp.watch("js/**/*.js",["js"]);
+    gulp.watch(["ejs/**/*.ejs", "ejs/common/**/_*.ejs"],["ejs"]);
 });
