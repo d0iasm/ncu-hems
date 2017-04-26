@@ -1,11 +1,3 @@
-h1 {
-  color: red;
-  transition: 200ms ease-out transform; }
-  h1:hover {
-    color: blue;
-    -webkit-transform: translate(10px, 0);
-            transform: translate(10px, 0); }
-
 .left-menu {
   width: 20vw;
   height: 100%; }
