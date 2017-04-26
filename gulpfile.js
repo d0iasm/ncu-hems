@@ -54,5 +54,5 @@ gulp.task("default", ['server'], function() {
     gulp.watch("sass/**/*.scss",["sass"]);
     gulp.watch("js/**/*.js",["webpack"]);
     gulp.watch("js/**/*.js",["js"]);
-    gulp.watch("ejs/**/*.ejs",["ejs"]);
+    gulp.watch(["ejs/**/*.ejs", "ejs/common/**/_*.ejs"],["ejs"]);
 });
