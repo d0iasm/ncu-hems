@@ -45,9 +45,9 @@
 /***/ (function(module, exports) {
 
 	(function() {
-	    window.addEventListener('load', function() {
-	        alert('loaded!!!');
-	   });
+	  //   window.addEventListener('load', function() {
+	  //       alert('loaded!!!');
+	  //  });
 	})();
 
 
