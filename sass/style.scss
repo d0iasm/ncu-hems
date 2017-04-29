@@ -22,3 +22,23 @@
     width: 200px;
   }
 }
+
+.main-item{
+  background-color: white;
+  border-radius: 10px;
+}
+.graph{
+  width: 90%;
+  height: 40vh;
+  margin: 40px auto;
+}
+.powers{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
+}
+.power{
+  width: 47%;
+  height: 35vh;
+}
