@@ -6,75 +6,21 @@ body {
 a {
   text-decoration: none; }
 
-h1 {
-  font-size: 24px;
-  font-weight: bold; }
-
-.dark-green {
-  background-color: #009624;
-  height: 13vh;
-  padding-top: 2vh; }
-
-.green {
-  height: 15vh;
+.menu-wrapper {
+  overflow-x: scroll;
+  width: 100%;
+  height: 60px;
   background-color: #00c853; }
 
-.font-center {
-  text-align: center; }
+.menu {
+  white-space: nowrap; }
 
-.font-white {
-  color: white; }
-
-.margin-left {
-  margin-left: 20px; }
-
-.left-menu {
-  width: 20vw;
-  height: 100%; }
-
-.user img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: gray;
-  float: left;
-  margin-top: 10px;
-  margin-right: 10px; }
-
-.user p {
-  line-height: 70px; }
-
-.user:after {
-  content: '';
-  display: table;
-  clear: both; }
-
-.all-sections {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
-.section {
-  height: 55vh; }
-
-.section-item {
+.menu-item {
   display: inline-block;
-  height: 50px;
-  width: 100%;
-  border-bottom: 1px solid #333;
-  line-height: 50px; }
-  .section-item a {
-    color: #333; }
-  .section-item:hover {
-    box-sizing: border-box;
-    border-right: 10px solid #009624; }
-
-.setting img {
-  width: 8vh;
-  height: 8vh; }
+  width: 150px;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  border-right: 1px white solid; }
+  .menu-item:first-of-type {
+    width: 200px; }

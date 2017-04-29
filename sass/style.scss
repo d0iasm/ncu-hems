@@ -1,86 +1,24 @@
 @import "_color";
+@import "_base";
+@import "_setting";
 
-body{
-  font-size: 18px;
-  font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
-}
-a{
-  text-decoration: none;
-}
-h1{
-  font-size: 24px;
-  font-weight: bold;
-}
-
-
-.dark-green{
-  background-color: $dark-green;
-  height: 13vh;
-  padding-top: 2vh;
-}
-.green{
-  height: 15vh;
+.menu-wrapper{
+  overflow-x: scroll;
+  width: 100%;
+  height: $menu-aline;
   background-color: $green;
 }
-.font-center{
-  text-align: center;
+.menu{
+  white-space: nowrap;
 }
-.font-white{
-  color: white;
-}
-.margin-left{
-  margin-left: 20px;
-}
-
-
-.left-menu{
-  width: 20vw;
-  height: 100%;
-}
-.user{
-  img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: gray;
-    float: left;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-  p{
-    line-height: 70px;
-  }
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-.all-sections{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section{
-  height: 55vh;
-}
-.section-item{
+.menu-item{
   display: inline-block;
-  height: 50px;
-  width: 100%;
-  border-bottom: 1px solid $font;
-  line-height: 50px;
-  a{
-    color: $font;
-  }
-  &:hover{
-    box-sizing:border-box;
-    border-right: 10px solid $dark-green;
-  }
-}
-.setting{
-  img{
-    width: 8vh;
-    height: 8vh;
+  width: 150px;
+  text-align: center;
+  line-height: $menu-aline;
+  color: white;
+  border-right: 1px white solid;
+  &:first-of-type{
+    width: 200px;
   }
 }
