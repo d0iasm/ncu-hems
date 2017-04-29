@@ -1,86 +1,80 @@
 @import "_color";
+@import "_base";
+@import "_setting";
 
-body{
-  font-size: 18px;
-  font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
-}
-a{
-  text-decoration: none;
-}
-h1{
+.title{
+  float: left;
+  width: 145px;
+  padding-left: 5px;
+  height: $menu-aline;
+  background-color: $green;
+  color: white;
   font-size: 24px;
   font-weight: bold;
-}
-
-
-.dark-green{
-  background-color: $dark-green;
-  height: 13vh;
-  padding-top: 2vh;
-}
-.green{
-  height: 15vh;
-  background-color: $green;
-}
-.font-center{
-  text-align: center;
-}
-.font-white{
-  color: white;
-}
-.margin-left{
-  margin-left: 20px;
-}
-
-
-.left-menu{
-  width: 20vw;
-  height: 100%;
-}
-.user{
-  img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: gray;
-    float: left;
-    margin-top: 10px;
-    margin-right: 10px;
+  h1{
+    margin-top: 7px;
   }
-  p{
-    line-height: 70px;
-  }
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
+  .user{
+    font-size: 18px;
+    font-weight: normal;
+    img{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $font;
+    }
+    p{
+      display: inline-block;
+      width: 50px;
+    }
   }
 }
-.all-sections{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section{
-  height: 55vh;
-}
-.section-item{
-  display: inline-block;
-  height: 50px;
+.menu-wrapper{
+  overflow-x: scroll;
   width: 100%;
-  border-bottom: 1px solid $font;
-  line-height: 50px;
-  a{
-    color: $font;
-  }
+  height: $menu-aline;
+  background-color: $bg;
+}
+.menu{
+  white-space: nowrap;
+}
+.menu-item{
+  display: inline-block;
+  width: 150px;
+  height: $menu-aline;
+  text-align: center;
+  line-height: $menu-aline;
+  color: white;
   &:hover{
-    box-sizing:border-box;
-    border-right: 10px solid $dark-green;
+    color: $green;
+    font-weight: bold;
+    border-bottom: solid 2px $green;
+    box-sizing: border-box;
+    background-color: white;
   }
 }
-.setting{
-  img{
-    width: 8vh;
-    height: 8vh;
-  }
+
+.main-item{
+  background-color: white;
+  border-radius: 10px;
+  // border: 2px solid $bg;
+  box-shadow: 2px 2px 3px 0px $bg;
+  border: 1px solid $bg;
+}
+.graph,
+.powers{
+  width: 95%;
+}
+.graph{
+  height: 40vh;
+  margin: 30px auto;
+}
+.powers{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.power{
+  width: 49%;
+  height: 35vh;
 }

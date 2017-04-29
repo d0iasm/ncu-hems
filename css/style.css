@@ -1,80 +1,81 @@
 @charset "UTF-8";
 body {
+  color: #555;
   font-size: 18px;
   font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif; }
 
 a {
   text-decoration: none; }
 
-h1 {
+.title {
+  float: left;
+  width: 145px;
+  padding-left: 5px;
+  height: 60px;
+  background-color: #00c853;
+  color: white;
   font-size: 24px;
   font-weight: bold; }
+  .title h1 {
+    margin-top: 7px; }
+  .title .user {
+    font-size: 18px;
+    font-weight: normal; }
+    .title .user img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #555; }
+    .title .user p {
+      display: inline-block;
+      width: 50px; }
 
-.dark-green {
-  background-color: #009624;
-  height: 13vh;
-  padding-top: 2vh; }
+.menu-wrapper {
+  overflow-x: scroll;
+  width: 100%;
+  height: 60px;
+  background-color: #ccc; }
 
-.green {
-  height: 15vh;
-  background-color: #00c853; }
+.menu {
+  white-space: nowrap; }
 
-.font-center {
-  text-align: center; }
-
-.font-white {
+.menu-item {
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
   color: white; }
+  .menu-item:hover {
+    color: #00c853;
+    font-weight: bold;
+    border-bottom: solid 2px #00c853;
+    box-sizing: border-box;
+    background-color: white; }
 
-.margin-left {
-  margin-left: 20px; }
+.main-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 0px #ccc;
+  border: 1px solid #ccc; }
 
-.left-menu {
-  width: 20vw;
-  height: 100%; }
+.graph,
+.powers {
+  width: 95%; }
 
-.user img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: gray;
-  float: left;
-  margin-top: 10px;
-  margin-right: 10px; }
+.graph {
+  height: 40vh;
+  margin: 30px auto; }
 
-.user p {
-  line-height: 70px; }
-
-.user:after {
-  content: '';
-  display: table;
-  clear: both; }
-
-.all-sections {
+.powers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto; }
 
-.section {
-  height: 55vh; }
-
-.section-item {
-  display: inline-block;
-  height: 50px;
-  width: 100%;
-  border-bottom: 1px solid #333;
-  line-height: 50px; }
-  .section-item a {
-    color: #333; }
-  .section-item:hover {
-    box-sizing: border-box;
-    border-right: 10px solid #009624; }
-
-.setting img {
-  width: 8vh;
-  height: 8vh; }
+.power {
+  width: 49%;
+  height: 35vh; }
