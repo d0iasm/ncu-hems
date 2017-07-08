@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var sass = require("gulp-sass");
 var ejs = require("gulp-ejs");
 var autoprefixer = require("gulp-autoprefixer");
+var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var browser = require("browser-sync");
 var plumber = require("gulp-plumber");
@@ -27,6 +28,7 @@ gulp.task("sass", function() {
 gulp.task("js", function() {
     gulp.src(["js/**/*.js", "!js/min/**/*.js"])
         .pipe(plumber())
+        .pipe(concat('script.js'))
         .pipe(uglify())
         .pipe(gulp.dest("./js/min"))
         .pipe(browser.reload({stream:true}))

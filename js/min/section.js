@@ -1,1 +1,0 @@
-function editSection(){var e=document.querySelector(".menu"),t=document.createElement("li");t.classList.add("menu-item"),t.textContent="hoge",e.appendChild(t)}
