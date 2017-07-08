@@ -1,26 +1,14 @@
 NCU HEMS
 ====
 
-## Description
-
 学内電力可視化システム
 
-## Demo
+## How to Development
+```
+$ gulp
+```
 
-## VS.
-
-## Requirement
-
-## Usage
-
-## Install
-
-## Contribution
-
-## Licence
-
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
-
-## Author
-
-[d0iasm](https://github.com/d0iasm)
+## Production files
+- index.html
+- css/style.css
+- js/min/index.js
