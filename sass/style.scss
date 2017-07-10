@@ -20,9 +20,8 @@ body{
   width: 145px;
   padding-left: 5px;
   height: $menu-aline;
-  background-color: $green;
   h1{
-    color: white;
+    color: $green;
     margin-top: 7px;
     font-size: 24px;
     font-weight: bold;
@@ -48,10 +47,10 @@ body{
 }
 
 main{
-  margin-top: $menu-aline+20;
+  margin-top: $menu-aline+10;
 }
 .canvas-container{
-  // position: relative;
+  position: relative;
   // height: 0;
   // overflow: hidden;
   // padding-top: 1%;
@@ -60,6 +59,18 @@ main{
   // border: 2px solid $bg;
   box-shadow: 2px 2px 3px 0px $bg;
   border: 1px solid $bg;
+  h1{
+    color: white;
+    width: 98%;
+    text-align: center;
+    background-color: $green;
+    padding: 1%;
+  }
+  .caption{
+    position: absolute;
+    top: 55%;
+    left: 42%;
+  }
 }
 .canvas{
   // position: absolute;

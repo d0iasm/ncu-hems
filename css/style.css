@@ -9,7 +9,7 @@ a {
 
 html,
 body {
-  background-color: #eee; }
+  background-color: #f5f5f5; }
 
 .fixed-top {
   position: fixed;
@@ -18,16 +18,15 @@ body {
   left: 0;
   overflow-x: scroll;
   height: 60px;
-  background-color: #eee; }
+  background-color: #f5f5f5; }
 
 .title {
   float: left;
   width: 145px;
   padding-left: 5px;
-  height: 60px;
-  background-color: #00c853; }
+  height: 60px; }
   .title h1 {
-    color: white;
+    color: #00c853;
     margin-top: 7px;
     font-size: 24px;
     font-weight: bold; }
@@ -50,13 +49,24 @@ body {
     background-color: white; }
 
 main {
-  margin-top: 80px; }
+  margin-top: 70px; }
 
 .canvas-container {
+  position: relative;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 2px 2px 3px 0px #eee;
-  border: 1px solid #eee; }
+  box-shadow: 2px 2px 3px 0px #f5f5f5;
+  border: 1px solid #f5f5f5; }
+  .canvas-container h1 {
+    color: white;
+    width: 98%;
+    text-align: center;
+    background-color: #00c853;
+    padding: 1%; }
+  .canvas-container .caption {
+    position: absolute;
+    top: 55%;
+    left: 42%; }
 
 .graph,
 .powers {

@@ -3,13 +3,23 @@
   var canvas = document.getElementsByClassName('canvas');
 
   var powerUsage = document.getElementById("power-usage");
+  var powerLabel = [];
+  for(var i=1; i<=12; i++){
+    var label = i + "月";
+    powerLabel.push(label);
+  }
+  var powerData = [12, 19, 3, 5, 2, 10, 20, 4, 1, 0, 3, 5];
+  createLine(powerUsage, powerLabel, powerData);
+
   var dailyPowerUsage = document.getElementById("daily-power-usage");
+  var costLabel = ["今月の電気使用量", "目標までの差"];
+  var costData = [50, 50];
+  createDoughnut(dailyPowerUsage, costLabel, costData);
+
   var powerCost = document.getElementById("power-cost");
-  var label = ["1月", "2月", "3月", "4月", "5月", "6月"];
-  var data = [12, 19, 3, 5, 2, 10];
-  createLine(powerUsage, label, data);
-  createPie(dailyPowerUsage);
-  createDoughnut(powerCost);
+  var costLabel = ["今月の使用料金", "目標までの差額"];
+  var costData = [70, 30];
+  createDoughnut(powerCost, costLabel, costData);
 })();
 
 function createLine(target, label, data){
@@ -20,7 +30,7 @@ function createLine(target, label, data){
         datasets: [{
             label: "電力（W）",
             backgroundColor: "rgba(75,192,192,0.4)",
-            borderColor: "rgba(75,192,192,1)",
+            borderColor: "#2ecc71",
             data: data
         }]
     },
@@ -36,52 +46,22 @@ function createLine(target, label, data){
   });
 }
 
-function createDoughnut(target){
+function createDoughnut(target, label, data){
   var doughnutChart = new Chart(target, {
     type: 'doughnut',
     data: {
-      labels: ["M", "T", "W", "T", "F", "S", "S"],
+      labels: label,
       datasets: [{
         backgroundColor: [
           "#2ecc71",
-          "#3498db",
-          "#95a5a6",
-          "#9b59b6",
-          "#f1c40f",
-          "#e74c3c",
-          "#34495e"
+          "#95a5a6"
         ],
-        data: [12, 19, 3, 17, 28, 24, 7]
+        // hoverBackgroundColor: [
+        //   "#FF6384",
+        //   "#36A2EB"
+        // ],
+        data: data
       }]
     }
-  });
-}
-
-function createPie(target){
-  var data = {
-    labels: [
-        "Red",
-        "Blue",
-        "Yellow"
-    ],
-    datasets: [
-        {
-            data: [300, 50, 100],
-            backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ]
-        }]
-  };
-  var pieChart = new Chart(target,{
-    type: 'pie',
-    data: data
-    // options: options
   });
 }
