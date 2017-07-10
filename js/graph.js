@@ -1,7 +1,4 @@
 (function() {
-  var container = document.getElementsByClassName('canvas-container');
-  var canvas = document.getElementsByClassName('canvas');
-
   var powerUsage = document.getElementById("power-usage");
   var powerLabel = [];
   for(var i=1; i<=12; i++){
