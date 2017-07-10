@@ -13,12 +13,21 @@
     <nav class="fixed-top">
       <div class="title">
         <h1>NCU HEMS</h1>
-        <a href="#" onclick="editSection()">セクション編集</a>
+        <a href="#" onclick="addSection()">セクション追加</a>
       </div>
       <ul class="menu">
-        <li class="menu-item" onclick="menuClick()"><span class="from">1</span> ~ <span class="to">5</span></li>
-        <li class="menu-item" onclick="menuClick()"><span class="from">6</span> ~ <span class="to">10</span></li>
-        <li class="menu-item" onclick="menuClick()"><span class="from">11</span> ~ <span class="to">15</span></li>
+        <li class="menu-item active" onclick="removeAction()">
+          <span class="cross" onclick="removeSection(event)">×</span>
+          <span class="from">1</span> ~ <span class="to">5</span>
+        </li>
+        <li class="menu-item">
+          <span class="cross" onclick="removeSection(event)">×</span>
+          <span class="from">6</span> ~ <span class="to">10</span>
+        </li>
+        <li class="menu-item">
+          <span class="cross" onclick="removeSection(event)">×</span>
+          <span class="from">11</span> ~ <span class="to">15</span>
+        </li>
       </ul>
     </nav>
   </header>

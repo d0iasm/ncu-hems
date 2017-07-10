@@ -38,6 +38,7 @@ body{
   }
 }
 .menu-item{
+  position: relative;
   display: inline-block;
   width: 150px;
   height: $menu-aline;
@@ -47,6 +48,11 @@ body{
   cursor: pointer;
   &:hover{
     font-weight: bold;
+  }
+  .cross{
+    position: absolute;
+    top: 10px - $menu-aline/2;
+    right: 0;
   }
 }
 
