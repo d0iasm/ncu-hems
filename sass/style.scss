@@ -2,38 +2,31 @@
 @import "_base";
 @import "_setting";
 
+html,
+body{
+  background-color: $bg;
+}
+.fixed-top{
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow-x: scroll;
+  height: $menu-aline;
+  background-color: $bg;
+}
 .title{
   float: left;
   width: 145px;
   padding-left: 5px;
   height: $menu-aline;
   background-color: $green;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
   h1{
+    color: white;
     margin-top: 7px;
+    font-size: 24px;
+    font-weight: bold;
   }
-  .user{
-    font-size: 18px;
-    font-weight: normal;
-    img{
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: $font;
-    }
-    p{
-      display: inline-block;
-      width: 50px;
-    }
-  }
-}
-.menu-wrapper{
-  overflow-x: scroll;
-  width: 100%;
-  height: $menu-aline;
-  background-color: $bg;
 }
 .menu{
   white-space: nowrap;
@@ -44,7 +37,7 @@
   height: $menu-aline;
   text-align: center;
   line-height: $menu-aline;
-  color: white;
+  color: $font;
   &:hover{
     color: $green;
     font-weight: bold;
@@ -54,12 +47,26 @@
   }
 }
 
-.main-item{
+main{
+  margin-top: $menu-aline+20;
+}
+.canvas-container{
+  // position: relative;
+  // height: 0;
+  // overflow: hidden;
+  // padding-top: 1%;
   background-color: white;
   border-radius: 10px;
   // border: 2px solid $bg;
   box-shadow: 2px 2px 3px 0px $bg;
   border: 1px solid $bg;
+}
+.canvas{
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 10%;
+  // height: 100%;
 }
 .graph,
 .powers{

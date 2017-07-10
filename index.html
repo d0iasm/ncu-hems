@@ -10,14 +10,10 @@
 </head>
 <body>
   <header>
-    <nav class="menu-wrapper">
+    <nav class="fixed-top">
       <div class="title">
         <h1>NCU HEMS</h1>
-        <div class="user">
-          <!-- <img src="./images/map.png" alt="user" /> -->
-          <!-- <p>admin</p> -->
-          <a href="#" onclick="editSection()">編集</a>
-        </div>
+        <a href="#" onclick="editSection()">編集</a>
       </div>
       <ul class="menu">
         <li class="menu-item">section1</li>
@@ -29,18 +25,18 @@
 
 
 <main>
-  <section class="main-item graph">
+  <section class="graph canvas-container">
     <h1>graph</h1>
-    <canvas id="power-usage" height="150" width="450"></canvas>
+    <canvas id="power-usage" class="canvas" height="150" width="450"></canvas>
   </section>
   <div class="powers">
-    <section class="main-item power">
+    <section class="power canvas-container">
       <h1>電力使用量</h1>
-      <canvas id="daily-power-usage" height="150" width="150"></canvas>
+      <canvas id="daily-power-usage" class="canvas" height="150" width="150"></canvas>
     </section>
-    <section class="main-item power">
+    <section class="power canvas-container">
       <h1>電力代換算</h1>
-      <canvas id="power-cost" height="150" width="150"></canvas>
+      <canvas id="power-cost" class="canvas" height="150" width="150"></canvas>
     </section>
   </div>
 </main>

@@ -1,4 +1,7 @@
 (function() {
+  var container = document.getElementsByClassName('canvas-container');
+  var canvas = document.getElementsByClassName('canvas');
+
   var powerUsage = document.getElementById("power-usage");
   var dailyPowerUsage = document.getElementById("daily-power-usage");
   var powerCost = document.getElementById("power-cost");
@@ -10,7 +13,7 @@
 })();
 
 function createLine(target, label, data){
-  var myLineChart = new Chart(target, {
+  var lineChart = new Chart(target, {
     type: 'line',
     data: {
         labels: label,
@@ -34,7 +37,7 @@ function createLine(target, label, data){
 }
 
 function createDoughnut(target){
-  var myChart = new Chart(target, {
+  var doughnutChart = new Chart(target, {
     type: 'doughnut',
     data: {
       labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -76,7 +79,7 @@ function createPie(target){
             ]
         }]
   };
-  var myPieChart = new Chart(target,{
+  var pieChart = new Chart(target,{
     type: 'pie',
     data: data
     // options: options
