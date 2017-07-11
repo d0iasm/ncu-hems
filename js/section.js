@@ -1,4 +1,11 @@
 function addSection(){
+  var modalOverlay = document.createElement('div');
+  var modalContent = document.getElementById('modal-content');
+  modalOverlay.setAttribute('id', 'modal-overlay');
+  document.querySelector('body').appendChild(modalOverlay);
+  modalContent.style.display = "inline";
+
+
   var menu =  document.querySelector('.menu');
   var newSection = document.createElement('li');
   newSection.classList.add('menu-item');
@@ -10,6 +17,13 @@ function addSection(){
     '<span class="cross" onclick="removeSection(event)">×</span>'+
     '<span class="from">1</span> ~ <span class="to">5</span>';
   menu.appendChild(newSection);
+}
+
+function closeModal(){
+  var modalOverlay = document.getElementById('modal-overlay');
+  modalOverlay.parentNode.removeChild(modalOverlay);
+  var modalContent = document.getElementById('modal-content');
+  modalContent.style.display = "none";
 }
 
 function removeSection(e){
