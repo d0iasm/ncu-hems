@@ -57,6 +57,7 @@ function addActive(e, isMenu){
   }else{
     e.target.parentNode.classList.add('active');
   }
+  update();
 }
 
 function removeActive(isMenu){
@@ -68,4 +69,15 @@ function removeActive(isMenu){
   for(var i=0; i<items.length; i++){
     items[i].classList.remove('active');
   }
+}
+
+function update(){
+  var js = document.querySelector('.js');
+  js.parentNode.removeChild(js);
+  
+  var ele = document.createElement("script");
+  ele.classList.add('js');
+  ele.type = "text/javascript";
+  ele.src = "./js/min/script.js";
+  document.body.appendChild(ele);
 }
