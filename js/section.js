@@ -1,14 +1,3 @@
-(function() {
-  // var hoge = document.getElementById("hoge");
-  // var menuItems =  document.querySelector('.menu-item');
-  var menuItems = document.getElementsByClassName('menu-item');
-  menuItems.addEventListener("click", menuClick(event), false);
-  // document.getElementById("hoge").addEventListener("click", function( event ) {
-  //   console.log("hoge");
-  //   event.target.textContent = "click count: " + event.detail;
-  // }, false);
-})
-
 function addSection(){
   var menu =  document.querySelector('.menu');
   var newSection = document.createElement('li');
@@ -16,7 +5,10 @@ function addSection(){
   if(menu.childElementCount == 0){
     newSection.classList.add('active');
   }
-  newSection.textContent = 'hoge';
+  newSection.setAttribute('onclick', 'addActive(event)');
+  newSection.innerHTML = ''+
+    '<span class="cross" onclick="removeSection(event)">×</span>'+
+    '<span class="from">1</span> ~ <span class="to">5</span>';
   menu.appendChild(newSection);
 }
 
@@ -33,6 +25,8 @@ function addActive(e){
   removeActive();
   if(e.target.tagName == 'LI'){
     e.target.classList.add('active');
+  }else{
+    e.target.parentNode.classList.add('active');
   }
 }
 
