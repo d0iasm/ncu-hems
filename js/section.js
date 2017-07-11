@@ -50,8 +50,8 @@ function removeSection(e){
   currentMenuItem.parentNode.removeChild(currentMenuItem);
 }
 
-function addActive(e){
-  removeActive();
+function addActive(e, isMenu){
+  removeActive(isMenu);
   if(e.target.tagName == 'LI'){
     e.target.classList.add('active');
   }else{
@@ -59,9 +59,13 @@ function addActive(e){
   }
 }
 
-function removeActive(){
-  var menuItems =  document.querySelectorAll('.menu-item');
-  for(var i=0; i<menuItems.length; i++){
-    menuItems[i].classList.remove('active');
+function removeActive(isMenu){
+  if(isMenu){
+    var items =  document.querySelectorAll('.menu-item');
+  }else{
+    var items =  document.querySelectorAll('.unit');
+  }
+  for(var i=0; i<items.length; i++){
+    items[i].classList.remove('active');
   }
 }
