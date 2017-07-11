@@ -24,6 +24,10 @@ function addSection(){
     window.alert('開始ナンバーは終了ナンバーより小さい数字を入力してください。');
     return;
   }
+  if(to > 15){
+    window.alert('現在の登録機器は1~15番までです。');
+    return;
+  }
 
   var menu =  document.querySelector('.menu');
   var newSection = document.createElement('li');
