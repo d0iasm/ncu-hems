@@ -31,7 +31,7 @@ function addSection(){
   if(menu.childElementCount == 0){
     newSection.classList.add('active');
   }
-  newSection.setAttribute('onclick', 'addActive(event)');
+  newSection.setAttribute('onclick', 'addActive(event, true)');
   newSection.innerHTML = ''+
     '<span class="cross" onclick="removeSection(event)">×</span>'+
     '<span class="from">'+ from +'</span> ~ <span class="to">'+ to +'</span>';
@@ -74,7 +74,7 @@ function removeActive(isMenu){
 function update(){
   var js = document.querySelector('.js');
   js.parentNode.removeChild(js);
-  
+
   var ele = document.createElement("script");
   ele.classList.add('js');
   ele.type = "text/javascript";
