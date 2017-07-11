@@ -1,10 +1,35 @@
 (function() {
+  // ----- ここから -------
+  // データをセットする
+  // ex.) data[1][hour] 1つ目の機器の時間あたりのデータをint型の配列で保持
+  var data = [];
+  for(var i=1; i<=15; i++){
+    data[i] = {
+      "hour": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+      "day": [31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
+      "month": [1,2,3,4,5,6,7,8,9,10,11,12]
+    };
+  }
+  // ----- ここまで -------
+
+  var activeMenu =  document.querySelector('.menu-item.active')
+  for(var i=0; i<activeMenu.children.length; i++){
+    if(activeMenu.children[i].classList.contains('from')){
+      var from = activeMenu.children[i].innerHTML;
+    }else if(activeMenu.children[i].classList.contains('to')){
+      var to = activeMenu.children[i].innerHTML;
+    }
+  }
+
   var powerUsage = document.getElementById("power-usage");
   var units =  document.querySelectorAll('.unit');
   for(var i=0; i<units.length; i++){
     if(units[i].classList.contains('active')){
       var powerLabel = createXAxis(i);
-      var powerData = createData(i);
+      console.log(from);
+      console.log(to);
+      console.log(i);
+      var powerData = createData(data, from, to, i);
     }
   }
   createLine(powerUsage, powerLabel, powerData);
@@ -22,31 +47,35 @@
   createDoughnut(powerCost, costLabel, costData);
 })();
 
-// 電力データを作成するメソッド
-// 戻り値 data int型の配列
-// ex) data = [1, 6, 10, 30, 5, 30]
-function createData(num){
-  var data = [];
+function createData(data, from, to, num){
+  var result = [];
   if(num == 0){
-    for(var i=1; i<=24; i++){
-      // 時間あたりの電力
-      var item = i;
-      data.push(item);
+    for(var i=0; i<24; i++){
+      var item = 0;
+      for(var j=from; j<=to; j++){
+        item += data[j]["hour"][i];
+      }
+      result.push(item);
     }
   }else if(num == 1){
-    for(var i=1; i<=31; i++){
-      // 日にちあたりの電力
-      var item = i;
-      data.push(item);
+    for(var i=0; i<31; i++){
+      var item = 0;
+      for(var j=from; j<=to; j++){
+        item += data[j]["day"][i];
+      }
+      result.push(item);
     }
   }else if(num == 2){
-    for(var i=1; i<=12; i++){
-      // 月あたりの電力
-      var item = i;
-      data.push(item);
+    for(var i=0; i<12; i++){
+      var item = 0;
+      for(var j=from; j<=to; j++){
+        item += data[j]["month"][i];
+      }
+      result.push(item);
     }
   }
-  return data;
+  console.log(result);
+  return result;
 }
 
 function createXAxis(num){
