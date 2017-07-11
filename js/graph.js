@@ -26,10 +26,7 @@
   for(var i=0; i<units.length; i++){
     if(units[i].classList.contains('active')){
       var powerLabel = createXAxis(i);
-      console.log(from);
-      console.log(to);
-      console.log(i);
-      var powerData = createData(data, from, to, i);
+      var powerData = createData(data, parseInt(from), parseInt(to), i);
     }
   }
   createLine(powerUsage, powerLabel, powerData);
@@ -53,7 +50,9 @@ function createData(data, from, to, num){
     for(var i=0; i<24; i++){
       var item = 0;
       for(var j=from; j<=to; j++){
+        console.log("hoge");
         item += data[j]["hour"][i];
+        console.log(item);
       }
       result.push(item);
     }
