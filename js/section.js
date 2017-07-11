@@ -1,10 +1,25 @@
-function addSection(){
+function openModal(){
   var modalOverlay = document.createElement('div');
   var modalContent = document.getElementById('modal-content');
   modalOverlay.setAttribute('id', 'modal-overlay');
+  modalOverlay.setAttribute('onclick', 'closeModal()');
   document.querySelector('body').appendChild(modalOverlay);
   modalContent.style.display = "inline";
+}
 
+function closeModal(){
+  var modalOverlay = document.getElementById('modal-overlay');
+  modalOverlay.parentNode.removeChild(modalOverlay);
+  var modalContent = document.getElementById('modal-content');
+  modalContent.style.display = "none";
+}
+
+function addSection(){
+  var from = document.section.from.value;
+  var to = document.section.to.value;
+  if(!from || !to){
+    return;
+  }
 
   var menu =  document.querySelector('.menu');
   var newSection = document.createElement('li');
@@ -15,15 +30,11 @@ function addSection(){
   newSection.setAttribute('onclick', 'addActive(event)');
   newSection.innerHTML = ''+
     '<span class="cross" onclick="removeSection(event)">×</span>'+
-    '<span class="from">1</span> ~ <span class="to">5</span>';
+    '<span class="from">'+ from +'</span> ~ <span class="to">'+ to +'</span>';
   menu.appendChild(newSection);
-}
 
-function closeModal(){
-  var modalOverlay = document.getElementById('modal-overlay');
-  modalOverlay.parentNode.removeChild(modalOverlay);
-  var modalContent = document.getElementById('modal-content');
-  modalContent.style.display = "none";
+  closeModal();
+  document.section.reset();
 }
 
 function removeSection(e){
