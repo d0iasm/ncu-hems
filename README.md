@@ -15,3 +15,6 @@ $ gulp
 see http://localhost:3000/
 
 if you edit files in "ejs" or "sass" directory, automatically convert to "html" or "css" files.
+
+## Image
+![ncu-hems](https://raw.githubusercontent.com/d0iasm/images/master/ncu-hems/ncu-hems.png)
