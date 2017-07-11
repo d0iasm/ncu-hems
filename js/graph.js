@@ -26,33 +26,31 @@
   for(var i=0; i<units.length; i++){
     if(units[i].classList.contains('active')){
       var powerLabel = createXAxis(i);
-      var powerData = createData(data, parseInt(from), parseInt(to), i);
+      var powerData = createPowerData(data, parseInt(from), parseInt(to), i);
     }
   }
   createLine(powerUsage, powerLabel, powerData);
 
-  var dailyPowerUsage = document.getElementById("daily-power-usage");
-  var costLabel = ["今月の電気使用量", "目標までの差"];
-  // [Data] 今月の電気使用量と目標値までの差
-  var costData = [50, 50];
-  createDoughnut(dailyPowerUsage, costLabel, costData);
+  var monthlyPowerUsage = document.getElementById("daily-power-usage");
+  var monthlyPowerUsageLabel = ["今月の電気使用量", "目標までの差"];
+  var max = 5000;
+  var monthlyPowerUsageData = calculatePercentage(data, parseInt(from), parseInt(to), max);
+  createDoughnut(monthlyPowerUsage, monthlyPowerUsageLabel, monthlyPowerUsageData);
 
   var powerCost = document.getElementById("power-cost");
   var costLabel = ["今月の使用料金", "目標までの差額"];
-  // [Data] 今月の使用料金と目標値までの差額
-  var costData = [70, 30];
+  var max = 3000;
+  var costData = calculatePercentage(data, parseInt(from), parseInt(to), max);
   createDoughnut(powerCost, costLabel, costData);
 })();
 
-function createData(data, from, to, num){
+function createPowerData(data, from, to, num){
   var result = [];
   if(num == 0){
     for(var i=0; i<24; i++){
       var item = 0;
       for(var j=from; j<=to; j++){
-        console.log("hoge");
         item += data[j]["hour"][i];
-        console.log(item);
       }
       result.push(item);
     }
@@ -73,8 +71,22 @@ function createData(data, from, to, num){
       result.push(item);
     }
   }
-  console.log(result);
   return result;
+}
+
+function calculatePercentage(data, from, to, max){
+  var item = 0;
+  for(var i=from; i<=to; i++){
+    for(var j=0; j<31; j++){
+      item += data[i]["day"][j];
+    }
+  }
+  var use = item / max * 100;
+  return [use, 100-use];
+}
+
+function convertCost(){
+  // 電気代換算
 }
 
 function createXAxis(num){
