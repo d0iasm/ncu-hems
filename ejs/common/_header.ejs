@@ -9,22 +9,36 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <div id="modal-content">
+    <span class="cross" onclick="closeModal()">×</span>
+    <h2>新しいセクションの追加</h2>
+    <p>開始ナンバーと終了ナンバーを入力してください。</p>
+    <small>右上の「×」か「背景」をクリックするとウィンドウを閉じます。</small>
+    <form name="section" onclick="addSection(); return false;">
+      <input type="number" name="from" placeholder="開始ナンバー"/>
+      <input type="number" name="to" placeholder="終了ナンバー"/>
+      <button type="submit">追加</button>
+    </form>
+  </div>
   <header>
-    <nav class="menu-wrapper">
+    <nav class="fixed-top">
       <div class="title">
         <h1>NCU HEMS</h1>
-        <div class="user">
-          <!-- <img src="./images/map.png" alt="user" /> -->
-          <!-- <p>admin</p> -->
-          <a href="#" onclick="editSection()">編集</a>
-        </div>
+        <p id="modal-open" onclick="openModal()">セクション追加</p>
       </div>
       <ul class="menu">
-        <li class="menu-item">section1</li>
-        <li class="menu-item">section2</li>
-        <li class="menu-item">section3</li>
-        <li class="menu-item">section4</li>
-        <li class="menu-item">section5</li>
+        <li class="menu-item active" onclick="addActive(event)">
+          <span class="cross" onclick="removeSection(event)">×</span>
+          <span class="from">1</span> ~ <span class="to">5</span>
+        </li>
+        <li class="menu-item" onclick="addActive(event)">
+          <span class="cross" onclick="removeSection(event)">×</span>
+          <span class="from">6</span> ~ <span class="to">10</span>
+        </li>
+        <li class="menu-item" onclick="addActive(event)">
+          <span class="cross" onclick="removeSection(event)">×</span>
+          <span class="from">11</span> ~ <span class="to">15</span>
+        </li>
       </ul>
     </nav>
   </header>

@@ -1,16 +1,26 @@
 <% include common/_header %>
 
 <main>
-  <section class="main-item graph">
-    <h1>graph</h1>
+  <section class="graph canvas-container">
+    <h1>電力使用量</h1>
+    <canvas id="power-usage" class="canvas" height="150" width="450"></canvas>
   </section>
   <div class="powers">
-    <section class="main-item power">
+    <section class="power canvas-container">
       <h1>電力使用量</h1>
-      <canvas id="power-usage" height="150" width="150"></canvas>
+      <canvas id="daily-power-usage" class="canvas" height="150" width="150"></canvas>
+      <div class="caption">
+        <em>50</em>
+        <span>%</span>
+      </div>
     </section>
-    <section class="main-item power">
+    <section class="power canvas-container">
       <h1>電力代換算</h1>
+      <canvas id="power-cost" class="canvas" height="150" width="150"></canvas>
+      <div class="caption">
+        <em>70</em>
+        <span>%</span>
+      </div>
     </section>
   </div>
 </main>

@@ -2,50 +2,70 @@
 @import "_base";
 @import "_setting";
 
-.title{
-  float: left;
-  width: 145px;
-  padding-left: 5px;
-  height: $menu-aline;
-  background-color: $green;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  h1{
-    margin-top: 7px;
-  }
-  .user{
-    font-size: 18px;
-    font-weight: normal;
-    img{
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: $font;
-    }
-    p{
-      display: inline-block;
-      width: 50px;
-    }
-  }
+html,
+body{
+  background-color: $bg;
+  position: relative;
 }
-.menu-wrapper{
+.fixed-top{
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
   overflow-x: scroll;
-  width: 100%;
   height: $menu-aline;
   background-color: $bg;
+  z-index: 9997;
 }
+.title{
+  float: left;
+  width: 150px;
+  padding: 5px;
+  height: calc($menu-aline - 10px);
+  text-align: center;
+  h1{
+    color: $green;
+    margin-top: 7px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+.cross{
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#modal-open{
+  cursor: pointer;
+  &:hover{
+    font-weight: bold;
+  }
+}
+#modal-content {
+  width: 400px;
+  padding: 10px 20px;
+  border: 1px solid $font;
+  background: #fff;
+  position: fixed;
+  top: 200px;
+  left: calc(50% - 200px);
+  display: none;
+  z-index: 9999;
+}
+#modal-overlay {
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(100, 100, 100, 0.75 );
+}
+
 .menu{
   white-space: nowrap;
-}
-.menu-item{
-  display: inline-block;
-  width: 150px;
-  height: $menu-aline;
-  text-align: center;
-  line-height: $menu-aline;
-  color: white;
-  &:hover{
+  .active{
     color: $green;
     font-weight: bold;
     border-bottom: solid 2px $green;
@@ -53,21 +73,57 @@
     background-color: white;
   }
 }
+.menu-item{
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: $menu-aline;
+  text-align: center;
+  line-height: $menu-aline;
+  color: $font;
+  cursor: pointer;
+  &:hover{
+    font-weight: bold;
+  }
+  .cross{
+    top: 10px - $menu-aline/2;
+  }
+}
 
-.main-item{
+main{
+  margin-top: $menu-aline+10;
+}
+.canvas-container{
+  position: relative;
   background-color: white;
   border-radius: 10px;
-  // border: 2px solid $bg;
   box-shadow: 2px 2px 3px 0px $bg;
   border: 1px solid $bg;
+  h1{
+    color: white;
+    width: calc(100% - 14px);
+    text-align: center;
+    background-color: $green;
+    padding: 7px;
+  }
+  .caption{
+    position: absolute;
+    top: calc(50% - 2vw);
+    left: calc(50% - 8vw);
+    text-align: center;
+    width: 16vw;
+    em{
+      font-size: 10vw;
+      font-weight: bold;
+    }
+  }
 }
 .graph,
 .powers{
   width: 95%;
 }
 .graph{
-  height: 40vh;
-  margin: 30px auto;
+  margin: 25px auto;
 }
 .powers{
   display: flex;
@@ -76,5 +132,4 @@
 }
 .power{
   width: 49%;
-  height: 35vh;
 }
