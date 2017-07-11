@@ -1,9 +1,10 @@
 (function() {
   var powerUsage = document.getElementById("power-usage");
-  var powerLabel = [];
-  for(var i=1; i<=12; i++){
-    var label = i + "月";
-    powerLabel.push(label);
+  var units =  document.querySelectorAll('.unit');
+  for(var i=0; i<units.length; i++){
+    if(units[i].classList.contains('active')){
+      var powerLabel = createXAxis(i);
+    }
   }
   var powerData = [12, 19, 3, 5, 2, 10, 20, 4, 1, 0, 3, 5];
   createLine(powerUsage, powerLabel, powerData);
@@ -18,6 +19,27 @@
   var costData = [70, 30];
   createDoughnut(powerCost, costLabel, costData);
 })();
+
+function createXAxis(num){
+  var label = [];
+  if(num == 0){
+    for(var i=1; i<=24; i++){
+      var item = i + "時";
+      label.push(item);
+    }
+  }else if(num == 1){
+    for(var i=1; i<=30; i++){
+      var item = i + "日";
+      label.push(item);
+    }
+  }else if(num == 2){
+    for(var i=1; i<=12; i++){
+      var item = i + "月";
+      label.push(item);
+    }
+  }
+  return label;
+}
 
 function createLine(target, label, data){
   var lineChart = new Chart(target, {
