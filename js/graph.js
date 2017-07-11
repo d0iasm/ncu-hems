@@ -35,12 +35,14 @@
   var monthlyPowerUsageLabel = ["今月の電気使用量", "目標までの差"];
   var max = 5000;
   var monthlyPowerUsageData = calculatePercentage(data, parseInt(from), parseInt(to), max);
+  document.getElementById('power-val').innerHTML = parseInt(monthlyPowerUsageData[0]);
   createDoughnut(monthlyPowerUsage, monthlyPowerUsageLabel, monthlyPowerUsageData);
 
   var powerCost = document.getElementById("power-cost");
   var costLabel = ["今月の使用料金", "目標までの差額"];
   var max = 3000;
   var costData = calculatePercentage(data, parseInt(from), parseInt(to), max);
+  document.getElementById('cost-val').innerHTML = parseInt(costData[0]);
   createDoughnut(powerCost, costLabel, costData);
 })();
 
