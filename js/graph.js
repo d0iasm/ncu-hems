@@ -26,8 +26,8 @@ function createLine(target, label, data){
         labels: label,
         datasets: [{
             label: "電力（W）",
-            backgroundColor: "rgba(75,192,192,0.4)",
-            borderColor: "#2ecc71",
+            backgroundColor: "#9cff57",
+            borderColor: "#64dd17",
             data: data
         }]
     },
@@ -50,7 +50,7 @@ function createDoughnut(target, label, data){
       labels: label,
       datasets: [{
         backgroundColor: [
-          "#2ecc71",
+          "#64dd17",
           "#95a5a6"
         ],
         data: data
