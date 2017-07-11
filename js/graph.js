@@ -53,10 +53,6 @@ function createDoughnut(target, label, data){
           "#2ecc71",
           "#95a5a6"
         ],
-        // hoverBackgroundColor: [
-        //   "#FF6384",
-        //   "#36A2EB"
-        // ],
         data: data
       }]
     }

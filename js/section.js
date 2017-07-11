@@ -20,6 +20,10 @@ function addSection(){
   if(!from || !to){
     return;
   }
+  if(from > to){
+    window.alert('開始ナンバーは終了ナンバーより小さい数字を入力してください。');
+    return;
+  }
 
   var menu =  document.querySelector('.menu');
   var newSection = document.createElement('li');
